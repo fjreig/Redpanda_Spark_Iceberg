@@ -5,6 +5,7 @@ rpk profile create docker-compose-iceberg --set=admin_api.addresses=localhost:19
 
 ```
 rpk topic create key_value --topic-config=redpanda.iceberg.mode=key_value
+rpk topic create prueba --topic-config=redpanda.iceberg.mode=key_value
 rpk topic create value_schema_id_prefix --topic-config=redpanda.iceberg.mode=value_schema_id_prefix
 ```
 
@@ -26,6 +27,14 @@ echo '{"user_id":2324,"event_type":"BUTTON_CLICK","ts":"2024-11-25T20:23:59.380Z
 
 ```
 docker exec -it spark-iceberg python3 consulta.py
+```
+
+
+
+Consultar tablas del catalogo
+
+```
+http://localhost:8181/v1/namespaces/redpanda/tables
 ```
 
 https://github.com/redpanda-data/redpanda-labs/tree/main/docker-compose/iceberg
