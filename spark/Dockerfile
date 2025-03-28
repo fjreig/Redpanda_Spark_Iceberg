@@ -127,5 +127,6 @@ COPY .pyiceberg.yaml /root/.pyiceberg.yaml
 
 COPY entrypoint.sh .
 
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
+RUN ["chmod", "+x", "./entrypoint.sh"]
 CMD ["notebook"]

@@ -144,6 +144,8 @@ services:
     #image: tabulario/spark-iceberg
     container_name: spark-iceberg
     build: spark/
+    volumes:
+      - ./spark/notebooks:/home/iceberg/notebooks
     networks:
       - redpanda_network
     depends_on:
@@ -155,7 +157,7 @@ services:
       - AWS_REGION=local
     ports:
       - 8888:8888
-      - 8085:8080
+      - 8080:8080
       - 10000:10000
       - 10001:10001
   nifi:
