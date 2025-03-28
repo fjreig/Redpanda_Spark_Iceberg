@@ -160,6 +160,8 @@ services:
       - 8080:8080
       - 10000:10000
       - 10001:10001
+    env_file:
+      - .env
   nifi:
     container_name: nifi
     image: apache/nifi:1.28.0
